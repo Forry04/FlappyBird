@@ -28,4 +28,9 @@ public class FlightBehaviour : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, 0, _rigidbody2D.velocity.y * _rotationSpeed);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameManager.instance.GameOver();
+    }
+
 }
